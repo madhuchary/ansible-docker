@@ -1,0 +1,7 @@
+---
+- name:  "{{ key }} ec2 key"
+  ec2_key:
+    name: "{{ key }}"
+    region: us-west-2
+    key_material: "{{ item }}"
+  with_file: /root/.ssh/id_rsa.pub
