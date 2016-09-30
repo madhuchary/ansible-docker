@@ -1,1 +1,4 @@
 ---
+sg_name: docker
+region: us-west-2
+instance_name: docker

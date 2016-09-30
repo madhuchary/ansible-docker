@@ -1,12 +1,17 @@
 ---
-- include_vars: roles/ec2_keys/vars/main.yml
 - name: lunching ec2
   ec2:
     key_name: "{{ key }}"
     instance_type: t2.micro
     image: ami-d732f0b7
-    group: docker
-    region: us-west-2
+    user_data: "{{ lookup('file', '../files/main.yml') }}"
+    group: "{{ sg_name }}"
+    exact_count: 1
+    count_tag: Name
+    instance_tags:
+       Name: "{{ instance_name }}"
+       env: test
+    region: "{{ region }}"
     
 
  
