@@ -1,0 +1,6 @@
+---
+- name: copying file to ec2 instance
+  copy:
+   src: test.txt 
+   dest: /tmp
+   

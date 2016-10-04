@@ -6,3 +6,9 @@
    - ec2_keys
    - sg
    - ec2_launch
+
+- hosts: tag_Name_docker
+  user: ubuntu
+  sudo: yes
+  roles:
+   - ec2-dynamic
